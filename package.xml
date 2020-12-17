@@ -75,8 +75,8 @@
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="/~/catkin_ws/src/hekken_kouza2020/worlds" />
-    <gazebo_ros plugin_path="${prefix}/lib" gazebo_model_path="/~/catkin_ws/src/hekken_kouza2020/models" />
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="/root/catkin_ws/src/hekken_kouza2020/worlds" />
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_model_path="/root/catkin_ws/src/hekken_kouza2020/models" />
   </export>
 
 
