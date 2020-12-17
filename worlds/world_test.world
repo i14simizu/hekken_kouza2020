@@ -30,9 +30,9 @@
           <iters>16</iters>
         </solver>
       </ode>
-      <constraints>
+      <!--<constraints>
         <contact_surface_layer>0.001</contact_surface_layer>
-      </constraints>
+      </constraints>-->
     </physics>
   
   
