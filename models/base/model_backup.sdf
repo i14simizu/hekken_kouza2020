@@ -72,14 +72,14 @@
 			<collision name="collision">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank1_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank1_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
 			<visual name="visual">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank1_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank1_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 				<material>
@@ -118,14 +118,14 @@
 			<collision name="collision">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank2_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank2_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
 			<visual name="visual">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank2_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank2_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 				<material>
@@ -164,14 +164,14 @@
 			<collision name="collision">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank2_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank2_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
 			<visual name="visual">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank2_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank2_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 				<material>
@@ -210,14 +210,14 @@
 			<collision name="collision">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank1_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank1_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 			</collision>
 			<visual name="visual">
 				<geometry>
 					<mesh>
-						<uri>model://base/crank1_collide_ad_blen_low2.stl</uri>
+						<uri>model://base/crank1_lowp_ad_07.stl</uri>
 					</mesh>
 				</geometry>
 				<material>
