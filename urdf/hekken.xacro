@@ -162,24 +162,49 @@
         </gazebo>
     </xacro:macro>
 
-    <xacro:macro name="asi_secret_continuous" params="parent child xyz rpy">
+    <xacro:macro name="asi_secret_continuous" params="parent child xyz rpy length">
         <joint name="${child}_joint" type="continuous">
             <origin xyz="${xyz}" rpy="${rpy}"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
         </joint>
-        <link name="${child}_link"/>
-        <gazebo reference="${child}_link"/>
+        <link name="${child}_link">
+            <collision>
+                <geometry>
+                    <cylinder radius="0.000001" length="0.000001"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.000001"/>
+                <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1"/>
+            </inertial>
+        </link>
+        <gazebo reference="${child}_link">
+            <material>Gazebo/Purple</material>
+            <gravity>false</gravity>
+        </gazebo>
     </xacro:macro>
 
-    <xacro:macro name="asi_secret_fixed" params="parent child xyz">
+    <xacro:macro name="asi_secret_fixed" params="parent child xyz length">
         <joint name="${child}_joint" type="fixed">
             <origin xyz="${xyz}" rpy="0 0 0"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
         </joint>
-        <link name="${child}_link"/>
+        <link name="${child}_link">
+            <collision>
+                <geometry>
+                    <cylinder radius="0.000001" length="0.000001"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.000001"/>
+                <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1"/>
+            </inertial>
+        </link>
         <gazebo reference="${child}_link"/>
     </xacro:macro>
 
@@ -226,12 +251,17 @@
     <xacro:asi_left parent="b_crank_link" child="b_asi_3" xyz="-0.051 ${-0.005*sin(radians(60))} ${-0.005*cos(radians(60))}" rpy="${radians(-37)} 0 0"/>
 
     <!--<xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))} ${7.1*0.001*sin(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))}" rpy="0 0 0"/>-->
-    <xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${-7.1*0.001*cos(radians(89.414328349))} ${7.1*0.001*sin(radians(89.414328349))}" rpy="0 0 0"/>
+    <xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${-7.1*0.001*cos(radians(89.414328349))} ${7.1*0.001*sin(radians(89.414328349))}" rpy="0 0 0" length="0.0071"/>
     <!--<xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 ${-((25*0.001*cos(radians(38)))+(5*0.001*cos(radians(68))-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))))} ${-((sqrt(629.41)*0.001)**2-((25*0.001*cos(radians(38)))+(5*0.001*cos(radians(68))-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))))**2)}" rpy="0 0 0"/>-->
-    <xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 ${-0.001*sqrt(629.41)*cos(radians(31.017396292))} ${0.001*sqrt(629.41)*sin(radians(31.017396292))}" rpy="0 0 0"/>
-    <xacro:asi_secret_fixed parent="b_asi_1_secret2_link" child="b_asi_1_base" xyz="0 ${10*0.001*cos(radians(38))} ${-10*0.001*sin(radians(38))}"/>
-    <xacro:asi_secret_fixed parent="body_link" child="b_1_mix" xyz="${-0.1623-0.015} ${0.1375-0.015} 0.013"/>
-    <gazebo>
+    <xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 ${-0.001*sqrt(629.41)*cos(radians(31.017396292))} ${0.001*sqrt(629.41)*sin(radians(31.017396292))}" rpy="0 0 0" length="${sqrt(629.41)*0.001}"/>
+    <xacro:asi_secret_fixed parent="b_asi_1_secret2_link" child="b_asi_1_base" xyz="0 ${10*0.001*cos(radians(38))} ${-10*0.001*sin(radians(38))}" length="0.01"/>
+    <xacro:asi_secret_fixed parent="body_link" child="b_1_mix" xyz="${-0.1623-0.015} ${0.1375-0.015} 0.013" length="0.1"/>
+    <!--<joint name="b_asi_1_fix_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="b_1_mix_link"/>
+        <child link="b_asi_1_base_link"/>
+    </joint>-->
+    <!--<gazebo>
         <joint name="b_asi_1_fix_joint" type="continuous">
             <stopCfm>0.2</stopCfm>
             <stopErp>0.2</stopErp>
@@ -239,7 +269,7 @@
             <parent>b_1_mix_link</parent>
             <child>b_asi_1_base_link</child>
         </joint>
-    </gazebo>
+    </gazebo>-->
 
     <xacro:asi_left parent="c_crank_link" child="c_asi_1" xyz="-0.015 ${0.005*sin(radians(60))} ${-0.005*cos(radians(60))}" rpy="${radians(38)} 0 0"/>
     <xacro:asi_left parent="c_crank_link" child="c_asi_2" xyz="-0.033 0.0 -0.005" rpy="0 0 0"/>

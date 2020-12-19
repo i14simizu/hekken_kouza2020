@@ -7,6 +7,7 @@ node [shape=box];
 "a_asi_2_link" [label="a_asi_2_link"];
 "a_asi_3_link" [label="a_asi_3_link"];
 "b_1_mix_link" [label="b_1_mix_link"];
+"b_asi_1_base_link" [label="b_asi_1_base_link"];
 "b_crank_link" [label="b_crank_link"];
 "b_asi_1_link" [label="b_asi_1_link"];
 "b_asi_1_secret1_link" [label="b_asi_1_secret1_link"];
@@ -35,6 +36,8 @@ node [shape=ellipse, color=blue, fontcolor=blue];
 "a_asi_3_joint" -> "a_asi_3_link"
 "body_link" -> "b_1_mix_joint" [label="xyz: -0.1773 0.1225 0.013 \nrpy: 0 -0 0"]
 "b_1_mix_joint" -> "b_1_mix_link"
+"b_1_mix_link" -> "b_asi_1_fix_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"b_asi_1_fix_joint" -> "b_asi_1_base_link"
 "body_link" -> "b_crank_joint" [label="xyz: -0.1623 0.1375 0.013 \nrpy: 0 -0 0"]
 "b_crank_joint" -> "b_crank_link"
 "b_crank_link" -> "b_asi_1_joint" [label="xyz: -0.015 0.00433013 -0.0025 \nrpy: 0.663225 -0 0"]
@@ -43,8 +46,8 @@ node [shape=ellipse, color=blue, fontcolor=blue];
 "b_asi_1_secret1_joint" -> "b_asi_1_secret1_link"
 "b_asi_1_secret1_link" -> "b_asi_1_secret2_joint" [label="xyz: 0 -0.0215007 0.0129278 \nrpy: 0 -0 0"]
 "b_asi_1_secret2_joint" -> "b_asi_1_secret2_link"
-"b_asi_1_secret2_link" -> "b_asi_1_base_joint" [label="xyz: 0 0.00788011 -0.00615661 \nrpy: 0 -0 0"]
-"b_asi_1_base_joint" -> "b_asi_1_base_link"
+"b_asi_1_secret2_link" -> "b_asi_1_fix_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"b_asi_1_fix_joint" -> "b_asi_1_base_link"
 "b_crank_link" -> "b_asi_2_joint" [label="xyz: -0.033 0 -0.005 \nrpy: 0 -0 0"]
 "b_asi_2_joint" -> "b_asi_2_link"
 "b_crank_link" -> "b_asi_3_joint" [label="xyz: -0.051 -0.00433013 -0.0025 \nrpy: -0.645772 0 0"]

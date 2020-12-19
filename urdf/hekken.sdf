@@ -1,0 +1,1194 @@
+<sdf version='1.6'>
+  <model name='hekken'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.12003 0.088573 0.074818 0 -0 0</pose>
+        <mass>0.323853</mass>
+        <inertia>
+          <ixx>0.001101</ixx>
+          <ixy>-1.9489e-08</ixy>
+          <ixz>-3.2811e-07</ixz>
+          <iyy>0.001144</iyy>
+          <iyz>-2.903e-05</iyz>
+          <izz>0.00195</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__body_link_collision'>
+        <pose frame=''>0 0 0.05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/base_blen_low_3.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__body_visual'>
+        <pose frame=''>0 0 0.05 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/base_blen_low_3.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__b_1_mix_link_visual_1'>
+        <pose frame=''>-0.1773 0.1225 0.063 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <link name='a_crank_link'>
+      <pose frame=''>-0.0777 0.1375 0.063 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.037341 -0 -0.002966 0 -0 0</pose>
+        <mass>0.111155</mass>
+        <inertia>
+          <ixx>1.696e-05</ixx>
+          <ixy>5.13381e-06</ixy>
+          <ixz>-4.3631e-08</ixz>
+          <iyy>3.475e-05</iyy>
+          <iyz>2.165e-05</iyz>
+          <izz>3.573e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='a_crank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='a_crank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='a_crank_joint' type='revolute'>
+      <child>a_crank_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='a_asi_1_link'>
+      <pose frame=''>-0.0627 0.14183 0.0605 0.663225 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='a_asi_1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='a_asi_1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='a_asi_1_joint' type='revolute'>
+      <child>a_asi_1_link</child>
+      <parent>a_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='a_asi_2_link'>
+      <pose frame=''>-0.0447 0.1375 0.058 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='a_asi_2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='a_asi_2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='a_asi_2_joint' type='revolute'>
+      <child>a_asi_2_link</child>
+      <parent>a_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='a_asi_3_link'>
+      <pose frame=''>-0.0267 0.13317 0.0605 -0.645772 0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='a_asi_3_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='a_asi_3_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='a_asi_3_joint' type='revolute'>
+      <child>a_asi_3_link</child>
+      <parent>a_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='b_crank_link'>
+      <pose frame=''>-0.1623 0.1375 0.063 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.037341 -0 -0.002966 0 -0 0</pose>
+        <mass>0.111155</mass>
+        <inertia>
+          <ixx>1.696e-05</ixx>
+          <ixy>-5.13381e-06</ixy>
+          <ixz>4.3631e-08</ixz>
+          <iyy>3.475e-05</iyy>
+          <iyz>-2.165e-05</iyz>
+          <izz>3.573e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='b_crank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='b_crank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='b_crank_joint' type='revolute'>
+      <child>b_crank_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='b_asi_1_link'>
+      <pose frame=''>-0.1773 0.14183 0.0605 0.663225 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='b_asi_1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='b_asi_1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='b_asi_1_joint' type='revolute'>
+      <child>b_asi_1_link</child>
+      <parent>b_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='b_asi_2_link'>
+      <pose frame=''>-0.1953 0.1375 0.058 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='b_asi_2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='b_asi_2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='b_asi_2_joint' type='revolute'>
+      <child>b_asi_2_link</child>
+      <parent>b_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='b_asi_3_link'>
+      <pose frame=''>-0.2133 0.13317 0.0605 -0.645772 0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='b_asi_3_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='b_asi_3_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='b_asi_3_joint' type='revolute'>
+      <child>b_asi_3_link</child>
+      <parent>b_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='c_crank_link'>
+      <pose frame=''>-0.1623 0.0475 0.063 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.037341 -0 -0.002966 0 -0 0</pose>
+        <mass>0.111155</mass>
+        <inertia>
+          <ixx>1.696e-05</ixx>
+          <ixy>-5.13381e-06</ixy>
+          <ixz>4.3631e-08</ixz>
+          <iyy>3.475e-05</iyy>
+          <iyz>-2.165e-05</iyz>
+          <izz>3.573e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='c_crank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='c_crank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='c_crank_joint' type='revolute'>
+      <child>c_crank_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='c_asi_1_link'>
+      <pose frame=''>-0.1773 0.05183 0.0605 0.663225 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='c_asi_1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='c_asi_1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='c_asi_1_joint' type='revolute'>
+      <child>c_asi_1_link</child>
+      <parent>c_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='c_asi_2_link'>
+      <pose frame=''>-0.1953 0.0475 0.058 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='c_asi_2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='c_asi_2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='c_asi_2_joint' type='revolute'>
+      <child>c_asi_2_link</child>
+      <parent>c_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='c_asi_3_link'>
+      <pose frame=''>-0.2133 0.04317 0.0605 -0.645772 0 0</pose>
+      <inertial>
+        <pose frame=''>-0.004516 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='c_asi_3_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='c_asi_3_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_2_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='c_asi_3_joint' type='revolute'>
+      <child>c_asi_3_link</child>
+      <parent>c_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='d_crank_link'>
+      <pose frame=''>-0.0777 0.0475 0.063 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.037341 -0 -0.002966 0 -0 0</pose>
+        <mass>0.111155</mass>
+        <inertia>
+          <ixx>1.696e-05</ixx>
+          <ixy>5.13381e-06</ixy>
+          <ixz>-4.3631e-08</ixz>
+          <iyy>3.475e-05</iyy>
+          <iyz>2.165e-05</iyz>
+          <izz>3.573e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='d_crank_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='d_crank_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='d_crank_joint' type='revolute'>
+      <child>d_crank_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='d_asi_1_link'>
+      <pose frame=''>-0.0627 0.05183 0.0605 0.663225 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='d_asi_1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='d_asi_1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='d_asi_1_joint' type='revolute'>
+      <child>d_asi_1_link</child>
+      <parent>d_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='d_asi_2_link'>
+      <pose frame=''>-0.0447 0.0475 0.058 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='d_asi_2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='d_asi_2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='d_asi_2_joint' type='revolute'>
+      <child>d_asi_2_link</child>
+      <parent>d_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='d_asi_3_link'>
+      <pose frame=''>-0.0267 0.04317 0.0605 -0.645772 0 0</pose>
+      <inertial>
+        <pose frame=''>0.004485 -0.005639 -0.003777 0 -0 0</pose>
+        <mass>0.010706</mass>
+        <inertia>
+          <ixx>5.40181e-06</ixx>
+          <ixy>1.85e-10</ixy>
+          <ixz>4.96e-10</ixz>
+          <iyy>3.13909e-06</iyy>
+          <iyz>-9.8431e-07</iyz>
+          <izz>2.41125e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='d_asi_3_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='d_asi_3_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://tokuken_robot_description/models/base/asi_1_blen_low.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <gravity>1</gravity>
+    </link>
+    <joint name='d_asi_3_joint' type='revolute'>
+      <child>d_asi_3_link</child>
+      <parent>d_crank_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='b_asi_1_fix_joint' type='continuous'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>b_asi_1_secret2_link</child>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/hekken</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>1</legacyModeNS>
+    </plugin>
+  </model>
+</sdf>
