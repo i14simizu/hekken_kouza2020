@@ -306,7 +306,7 @@
     <gravity>true</gravity>
   </gazebo>
   <joint name="b_asi_1_secret1_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0 -0.00433012701892 3.166e-05"/>
+    <origin rpy="0 0 0" xyz="0 -7.25742165217e-05 0.00709962907363"/>
     <parent link="b_asi_1_link"/>
     <child link="b_asi_1_secret1_link"/>
     <axis xyz="1 0 0"/>
@@ -314,7 +314,7 @@
   <link name="b_asi_1_secret1_link"/>
   <gazebo reference="b_asi_1_secret1_link"/>
   <joint name="b_asi_1_secret2_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 -0.0215007275907 0.0129278270823"/>
     <parent link="b_asi_1_secret1_link"/>
     <child link="b_asi_1_secret2_link"/>
     <axis xyz="1 0 0"/>
@@ -322,14 +322,14 @@
   <link name="b_asi_1_secret2_link"/>
   <gazebo reference="b_asi_1_secret2_link"/>
   <joint name="b_asi_1_base_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0.00788010753607 -0.00615661475326"/>
     <parent link="b_asi_1_secret2_link"/>
     <child link="b_asi_1_base_link"/>
   </joint>
   <link name="b_asi_1_base_link"/>
   <gazebo reference="b_asi_1_base_link"/>
   <joint name="b_1_mix_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.1773 0.1225 0.013"/>
     <parent link="body_link"/>
     <child link="b_1_mix_link"/>
   </joint>

@@ -225,12 +225,16 @@
     <xacro:asi_left parent="b_crank_link" child="b_asi_2" xyz="-0.033 0.0 -0.005" rpy="0 0 0"/>
     <xacro:asi_left parent="b_crank_link" child="b_asi_3" xyz="-0.051 ${-0.005*sin(radians(60))} ${-0.005*cos(radians(60))}" rpy="${radians(-37)} 0 0"/>
 
-    <xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${(5*sqrt(3)/2)*0.001} ${((7.1*0.001)**2)-((5*sqrt(3)/2)*0.001)**2}" rpy="0 0 0"/>
-    <xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 0 0" rpy="0 0 0"/>
-    <xacro:asi_secret_fixed parent="b_asi_1_secret2_link" child="b_asi_1_base" xyz="0 0 0"/>
-    <xacro:asi_secret_fixed parent="body_link" child="b_1_mix" xyz="0 0 0"/>
+    <!--<xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))} ${7.1*0.001*sin(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))}" rpy="0 0 0"/>-->
+    <xacro:asi_secret_continuous parent="b_asi_1_link" child="b_asi_1_secret1" xyz="0 ${-7.1*0.001*cos(radians(89.414328349))} ${7.1*0.001*sin(radians(89.414328349))}" rpy="0 0 0"/>
+    <!--<xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 ${-((25*0.001*cos(radians(38)))+(5*0.001*cos(radians(68))-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))))} ${-((sqrt(629.41)*0.001)**2-((25*0.001*cos(radians(38)))+(5*0.001*cos(radians(68))-7.1*0.001*cos(radians(68)+(radians(60)-asin((5*sqrt(3))/(2*7.1))))))**2)}" rpy="0 0 0"/>-->
+    <xacro:asi_secret_continuous parent="b_asi_1_secret1_link" child="b_asi_1_secret2" xyz="0 ${-0.001*sqrt(629.41)*cos(radians(31.017396292))} ${0.001*sqrt(629.41)*sin(radians(31.017396292))}" rpy="0 0 0"/>
+    <xacro:asi_secret_fixed parent="b_asi_1_secret2_link" child="b_asi_1_base" xyz="0 ${10*0.001*cos(radians(38))} ${-10*0.001*sin(radians(38))}"/>
+    <xacro:asi_secret_fixed parent="body_link" child="b_1_mix" xyz="${-0.1623-0.015} ${0.1375-0.015} 0.013"/>
     <gazebo>
-        <joint name="b_asi_1_fix_joint">
+        <joint name="b_asi_1_fix_joint" type="continuous">
+            <stopCfm>0.2</stopCfm>
+            <stopErp>0.2</stopErp>
             <pose>0 0 0 0 0 0</pose>
             <parent>b_1_mix_link</parent>
             <child>b_asi_1_base_link</child>
